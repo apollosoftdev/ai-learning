@@ -7,6 +7,7 @@
     "start": "node server.js",
     "dev": "node server.js"
   },
-  "author": "",
+  "github": "https://github.com/apollosoftdev/ai-learning",
+  "author": "ApexSpire",
   "license": "MIT"
 }
