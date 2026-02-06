@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generative AI - AI Learning Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .genai-spotlight {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+      border: 1px solid var(--primary);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .genai-spotlight h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .genai-spotlight h3 svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--primary-light);
+    }
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .model-item {
+      background: var(--dark);
+      padding: 1rem;
+      border-radius: 0.75rem;
+      text-align: center;
+    }
+    .model-item h5 {
+      margin-bottom: 0.25rem;
+    }
+    .model-item p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .opportunity-risk {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .or-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+    .or-card.opportunity { border-top: 3px solid var(--secondary); }
+    .or-card.risk { border-top: 3px solid var(--danger); }
+    .or-card h4 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .or-card h4 svg {
+      width: 24px;
+      height: 24px;
+    }
+    .or-card.opportunity h4 svg { stroke: var(--secondary); }
+    .or-card.risk h4 svg { stroke: var(--danger); }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="../index.html" class="logo">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="16" cy="16" r="14"/>
+            <circle cx="16" cy="12" r="4"/>
+            <path d="M8 24c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+            <circle cx="10" cy="10" r="2" fill="currentColor"/>
+            <circle cx="22" cy="10" r="2" fill="currentColor"/>
+          </svg>
+          AI Learning Hub
+        </a>
+        <nav class="nav">
+          <a href="../index.html">Home</a>
+          <a href="what-is-ai.html">What is AI</a>
+          <a href="machine-learning.html">Machine Learning</a>
+          <a href="neural-networks.html">Neural Networks</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+        <span>Generative AI</span>
+      </div>
+      <div class="page-title">
+        <div class="page-title-icon" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v18M3 12h18"/>
+            <circle cx="12" cy="12" r="9"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Generative AI</h1>
+          <p class="text-muted">AI that creates new content from learned patterns</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container">
+      <!-- Definition Section -->
+      <section class="content-section">
+        <h2>What is Generative AI?</h2>
+
+        <div class="definition-box">
+          <h4>Generative AI</h4>
+          <p>A category of artificial intelligence that can create new content including text, images, music, code, and video by learning patterns from existing data. Unlike discriminative AI that classifies inputs, generative AI produces novel outputs.</p>
+        </div>
+
+        <p>Generative AI has exploded in popularity since 2022 with tools like ChatGPT, DALL-E, and Midjourney. These systems learn the underlying patterns in their training data and use that knowledge to generate entirely new content that didn't exist before.</p>
+
+        <div class="process-flow">
+          <div class="flow-step">
+            <div class="flow-box">
+              <h4>Training Data</h4>
+              <p>Text, images, code</p>
+            </div>
+          </div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="flow-step">
+            <div class="flow-box highlight">
+              <h4>Learn Patterns</h4>
+              <p>Statistical models</p>
+            </div>
+          </div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="flow-step">
+            <div class="flow-box highlight">
+              <h4>User Prompt</h4>
+              <p>Instructions</p>
+            </div>
+          </div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="flow-step">
+            <div class="flow-box">
+              <h4>New Content</h4>
+              <p>Generated output</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Types of Generative AI -->
+      <section class="content-section">
+        <h2>Types of Generative AI Models</h2>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(99, 102, 241, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #6366f1;">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <path d="M12 8v8M8 12h8"/>
+                </svg>
+              </div>
+              <h4>Variational Autoencoders (VAEs)</h4>
+            </div>
+            <p>Encode input data into a compressed representation, then decode it to generate new samples. Good for image generation and interpolation.</p>
+            <ul>
+              <li>Learns data distribution</li>
+              <li>Smooth latent space</li>
+              <li>Used for face generation</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(16, 185, 129, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #10b981;">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <h4>Generative Adversarial Networks (GANs)</h4>
+            </div>
+            <p>Two neural networks compete: a generator creates content, a discriminator evaluates it. This adversarial process produces highly realistic outputs.</p>
+            <ul>
+              <li>Generator vs Discriminator</li>
+              <li>Photorealistic images</li>
+              <li>StyleGAN, BigGAN</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(245, 158, 11, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #f59e0b;">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+              <h4>Autoregressive Models</h4>
+            </div>
+            <p>Generate content one element at a time, with each new element conditioned on previous ones. Foundation of modern language models.</p>
+            <ul>
+              <li>Sequential generation</li>
+              <li>GPT series, LLaMA</li>
+              <li>Excellent for text</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(236, 72, 153, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #ec4899;">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/>
+                </svg>
+              </div>
+              <h4>Diffusion Models</h4>
+            </div>
+            <p>Learn to reverse a gradual noising process, generating images by starting from pure noise and iteratively refining.</p>
+            <ul>
+              <li>State-of-the-art images</li>
+              <li>Stable Diffusion, DALL-E 3</li>
+              <li>Highly controllable</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(139, 92, 246, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #8b5cf6;">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                  <path d="M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <h4>Transformers</h4>
+            </div>
+            <p>Attention-based architecture that processes entire sequences in parallel. Powers most modern generative AI.</p>
+            <ul>
+              <li>Self-attention mechanism</li>
+              <li>GPT, BERT, T5</li>
+              <li>Multimodal capabilities</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ChatGPT Spotlight -->
+      <section class="content-section">
+        <div class="genai-spotlight">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            ChatGPT and Large Language Models
+          </h3>
+          <p>ChatGPT, released in November 2022, brought generative AI into mainstream awareness. It's built on GPT (Generative Pre-trained Transformer) architecture and can engage in human-like conversations, write code, explain concepts, and much more.</p>
+
+          <div class="model-grid">
+            <div class="model-item">
+              <h5>GPT-4</h5>
+              <p>OpenAI's flagship model</p>
+            </div>
+            <div class="model-item">
+              <h5>Claude</h5>
+              <p>Anthropic's assistant</p>
+            </div>
+            <div class="model-item">
+              <h5>Gemini</h5>
+              <p>Google's multimodal AI</p>
+            </div>
+            <div class="model-item">
+              <h5>LLaMA</h5>
+              <p>Meta's open model</p>
+            </div>
+          </div>
+
+          <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Capabilities:</h4>
+          <ul style="color: var(--text-muted);">
+            <li>Natural conversation and Q&A</li>
+            <li>Code generation and debugging</li>
+            <li>Content writing and editing</li>
+            <li>Translation and summarization</li>
+            <li>Analysis and reasoning</li>
+            <li>Creative writing and brainstorming</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Applications -->
+      <section class="content-section">
+        <h2>Generative AI Applications</h2>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9"/>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                </svg>
+              </div>
+              <h4>Text Generation</h4>
+            </div>
+            <ul>
+              <li>Article and blog writing</li>
+              <li>Email drafting</li>
+              <li>Story and script writing</li>
+              <li>Marketing copy</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="M21 15l-5-5L5 21"/>
+                </svg>
+              </div>
+              <h4>Image Generation</h4>
+            </div>
+            <ul>
+              <li>DALL-E, Midjourney</li>
+              <li>Stable Diffusion</li>
+              <li>Art and design</li>
+              <li>Product visualization</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 18l6-6-6-6"/>
+                  <path d="M8 6l-6 6 6 6"/>
+                  <path d="M14 4l-4 16"/>
+                </svg>
+              </div>
+              <h4>Code Generation</h4>
+            </div>
+            <ul>
+              <li>GitHub Copilot</li>
+              <li>Code completion</li>
+              <li>Bug fixing</li>
+              <li>Documentation</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18V5l12-2v13"/>
+                  <circle cx="6" cy="18" r="3"/>
+                  <circle cx="18" cy="16" r="3"/>
+                </svg>
+              </div>
+              <h4>Audio & Music</h4>
+            </div>
+            <ul>
+              <li>Music composition</li>
+              <li>Voice synthesis</li>
+              <li>Sound effects</li>
+              <li>Podcast editing</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="23 7 16 12 23 17 23 7"/>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                </svg>
+              </div>
+              <h4>Video Generation</h4>
+            </div>
+            <ul>
+              <li>Sora, Runway</li>
+              <li>Animation</li>
+              <li>Video editing</li>
+              <li>Special effects</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                </svg>
+              </div>
+              <h4>3D & Design</h4>
+            </div>
+            <ul>
+              <li>3D model generation</li>
+              <li>Game assets</li>
+              <li>Architecture design</li>
+              <li>Product prototyping</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Opportunities and Risks -->
+      <section class="content-section">
+        <h2>Opportunities and Risks</h2>
+
+        <div class="opportunity-risk">
+          <div class="or-card opportunity">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <path d="M22 4L12 14.01l-3-3"/>
+              </svg>
+              Opportunities
+            </h4>
+            <ul style="color: var(--text-muted);">
+              <li>Democratize content creation</li>
+              <li>Accelerate research and development</li>
+              <li>Personalized education and tutoring</li>
+              <li>Accessibility tools for disabilities</li>
+              <li>Automate repetitive creative tasks</li>
+              <li>Enable new forms of art and expression</li>
+              <li>Enhance productivity in many fields</li>
+              <li>Lower barriers to entrepreneurship</li>
+            </ul>
+          </div>
+
+          <div class="or-card risk">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              Risks
+            </h4>
+            <ul style="color: var(--text-muted);">
+              <li>Deepfakes and misinformation</li>
+              <li>Copyright and ownership issues</li>
+              <li>Job displacement in creative fields</li>
+              <li>Academic dishonesty</li>
+              <li>Privacy concerns with training data</li>
+              <li>Bias amplification</li>
+              <li>Environmental impact (energy use)</li>
+              <li>Over-reliance on AI-generated content</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future -->
+      <section class="content-section">
+        <h2>The Future of Generative AI</h2>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                  <path d="M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <h4>Multimodal AI</h4>
+            </div>
+            <p>Systems that seamlessly work across text, images, audio, and video. GPT-4V and Gemini are early examples of this trend.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <h4>AI Agents</h4>
+            </div>
+            <p>Autonomous AI systems that can plan, use tools, and complete complex multi-step tasks with minimal human intervention.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <h4>Safer AI</h4>
+            </div>
+            <p>Increased focus on alignment, safety guardrails, and preventing harmful outputs. Constitutional AI and RLHF are current approaches.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="ai-types.html" class="page-nav-link prev">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <div>
+            <div class="page-nav-label">Previous</div>
+            <div class="page-nav-title">Types of AI</div>
+          </div>
+        </a>
+        <a href="ethics.html" class="page-nav-link">
+          <div>
+            <div class="page-nav-label">Next Topic</div>
+            <div class="page-nav-title">AI Ethics</div>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Based on "Introduction to Artificial Intelligence" by Ahmed Banafa</p>
+    </div>
+  </footer>
+</body>
+</html>

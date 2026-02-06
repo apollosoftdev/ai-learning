@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Ethics - AI Learning Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .pillar-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .pillar-card:hover {
+      transform: translateY(-4px);
+    }
+    .pillar-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .pillar-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: white;
+    }
+    .pillar-icon.bias { background: linear-gradient(135deg, #f59e0b, #f97316); }
+    .pillar-icon.privacy { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+    .pillar-icon.accountability { background: linear-gradient(135deg, #10b981, #06b6d4); }
+    .pillar-icon.transparency { background: linear-gradient(135deg, #ec4899, #f43f5e); }
+    .pillar-card h4 {
+      margin-bottom: 0.75rem;
+    }
+    .pillar-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin: 0;
+    }
+    .responsibility-matrix {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .responsibility-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .responsibility-row:last-child {
+      border-bottom: none;
+    }
+    .responsibility-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 0.5rem;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .responsibility-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--primary-light);
+    }
+    .responsibility-content h5 {
+      margin-bottom: 0.25rem;
+    }
+    .responsibility-content p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin: 0;
+    }
+    .impact-section {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(236, 72, 153, 0.1));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .impact-section h3 {
+      color: #ef4444;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="../index.html" class="logo">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="16" cy="16" r="14"/>
+            <circle cx="16" cy="12" r="4"/>
+            <path d="M8 24c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+            <circle cx="10" cy="10" r="2" fill="currentColor"/>
+            <circle cx="22" cy="10" r="2" fill="currentColor"/>
+          </svg>
+          AI Learning Hub
+        </a>
+        <nav class="nav">
+          <a href="../index.html">Home</a>
+          <a href="what-is-ai.html">What is AI</a>
+          <a href="machine-learning.html">Machine Learning</a>
+          <a href="neural-networks.html">Neural Networks</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+        <span>AI Ethics</span>
+      </div>
+      <div class="page-title">
+        <div class="page-title-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <div>
+          <h1>AI Ethics</h1>
+          <p class="text-muted">Responsibility, fairness, and societal impact of AI</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container">
+      <!-- Introduction -->
+      <section class="content-section">
+        <h2>Why AI Ethics Matters</h2>
+
+        <div class="definition-box">
+          <h4>AI Ethics</h4>
+          <p>The study and practice of ensuring that artificial intelligence systems are designed, developed, and deployed in ways that are fair, transparent, accountable, and beneficial to humanity while minimizing potential harms.</p>
+        </div>
+
+        <p>As AI becomes more powerful and pervasive, ethical considerations become increasingly critical. AI systems can affect hiring decisions, loan approvals, medical diagnoses, criminal sentencing, and countless other aspects of human life. Without careful attention to ethics, AI can perpetuate or amplify existing biases and create new forms of harm.</p>
+      </section>
+
+      <!-- Four Pillars -->
+      <section class="content-section">
+        <h2>Four Pillars of AI Ethics</h2>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon bias">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v18M3 12h18"/>
+                <circle cx="12" cy="12" r="9"/>
+              </svg>
+            </div>
+            <h4>Bias & Fairness</h4>
+            <p>Ensuring AI systems treat all people equitably and don't discriminate based on race, gender, age, or other protected characteristics.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon privacy">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <h4>Privacy</h4>
+            <p>Protecting personal data used to train and operate AI systems, and respecting individuals' right to control their information.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon accountability">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+                <path d="M20 8v6M23 11h-6"/>
+              </svg>
+            </div>
+            <h4>Accountability</h4>
+            <p>Establishing clear responsibility for AI decisions and outcomes, with mechanisms for redress when things go wrong.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon transparency">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <h4>Transparency</h4>
+            <p>Making AI systems understandable and their decision-making processes explainable to those affected by them.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bias in AI -->
+      <section class="content-section">
+        <h2>Bias in AI Systems</h2>
+
+        <p>AI systems can inherit and amplify biases present in their training data or design. This can lead to unfair outcomes that disproportionately affect certain groups.</p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(245, 158, 11, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #f59e0b;">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                </svg>
+              </div>
+              <h4>Data Bias</h4>
+            </div>
+            <p>Training data that underrepresents or misrepresents certain groups leads to biased models.</p>
+            <ul>
+              <li>Historical discrimination in data</li>
+              <li>Unrepresentative samples</li>
+              <li>Labeling bias</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(245, 158, 11, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #f59e0b;">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+              <h4>Algorithm Bias</h4>
+            </div>
+            <p>Design choices in algorithms can inadvertently favor certain outcomes.</p>
+            <ul>
+              <li>Feature selection choices</li>
+              <li>Optimization targets</li>
+              <li>Proxy discrimination</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(245, 158, 11, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #f59e0b;">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <h4>Interaction Bias</h4>
+            </div>
+            <p>User feedback and interactions can reinforce existing biases.</p>
+            <ul>
+              <li>Feedback loops</li>
+              <li>Popularity bias</li>
+              <li>Confirmation bias</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Real-World Examples</h3>
+        <div class="info-grid">
+          <div class="info-card">
+            <h4 style="margin-bottom: 0.5rem;">Hiring Algorithms</h4>
+            <p>Amazon's recruiting tool showed bias against women because it was trained on resumes from a male-dominated tech industry.</p>
+          </div>
+          <div class="info-card">
+            <h4 style="margin-bottom: 0.5rem;">Facial Recognition</h4>
+            <p>Studies found facial recognition systems had higher error rates for darker-skinned individuals, especially women.</p>
+          </div>
+          <div class="info-card">
+            <h4 style="margin-bottom: 0.5rem;">Credit Decisions</h4>
+            <p>AI lending systems have been found to charge higher interest rates to minority borrowers with similar credit profiles.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy Concerns -->
+      <section class="content-section">
+        <h2>Privacy Concerns</h2>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                </svg>
+              </div>
+              <h4>Data Collection</h4>
+            </div>
+            <p>AI systems often require vast amounts of personal data for training, raising concerns about consent and data minimization.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+                </svg>
+              </div>
+              <h4>Surveillance</h4>
+            </div>
+            <p>AI-powered surveillance systems can track individuals at scale, threatening privacy and civil liberties.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+              <h4>Inference</h4>
+            </div>
+            <p>AI can infer sensitive information (health, political views, sexuality) from seemingly innocuous data.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Psychological Impacts -->
+      <section class="content-section">
+        <div class="impact-section">
+          <h3>Psychological Impacts of AI</h3>
+          <p>Beyond technical concerns, AI systems can have significant psychological effects on individuals and society.</p>
+
+          <div class="info-grid" style="margin-top: 1.5rem;">
+            <div class="info-card" style="background: var(--dark);">
+              <h4 style="margin-bottom: 0.5rem;">Anxiety & Stress</h4>
+              <p>Constant AI monitoring, job displacement fears, and information overload can increase anxiety and stress levels.</p>
+            </div>
+            <div class="info-card" style="background: var(--dark);">
+              <h4 style="margin-bottom: 0.5rem;">Addiction</h4>
+              <p>AI-optimized recommendation algorithms can be designed to maximize engagement, potentially leading to addictive usage patterns.</p>
+            </div>
+            <div class="info-card" style="background: var(--dark);">
+              <h4 style="margin-bottom: 0.5rem;">Social Isolation</h4>
+              <p>Over-reliance on AI assistants and chatbots may reduce human-to-human interaction and social skills.</p>
+            </div>
+            <div class="info-card" style="background: var(--dark);">
+              <h4 style="margin-bottom: 0.5rem;">Identity & Authenticity</h4>
+              <p>AI-generated content and deepfakes challenge our ability to distinguish real from fake, affecting trust and identity.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Responsibility Framework -->
+      <section class="content-section">
+        <h2>Who is Responsible?</h2>
+        <p>AI ethics requires shared responsibility among multiple stakeholders.</p>
+
+        <div class="responsibility-matrix">
+          <div class="responsibility-row">
+            <div class="responsibility-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 18l6-6-6-6"/>
+                <path d="M8 6l-6 6 6 6"/>
+              </svg>
+            </div>
+            <div class="responsibility-content">
+              <h5>Developers & Engineers</h5>
+              <p>Build ethical considerations into design, test for bias, implement safety measures, and refuse to build harmful systems.</p>
+            </div>
+          </div>
+
+          <div class="responsibility-row">
+            <div class="responsibility-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </div>
+            <div class="responsibility-content">
+              <h5>Companies & Organizations</h5>
+              <p>Establish ethical guidelines, create oversight boards, invest in safety research, and prioritize responsible deployment.</p>
+            </div>
+          </div>
+
+          <div class="responsibility-row">
+            <div class="responsibility-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="responsibility-content">
+              <h5>Governments & Regulators</h5>
+              <p>Create and enforce AI regulations, protect civil rights, fund safety research, and establish international cooperation.</p>
+            </div>
+          </div>
+
+          <div class="responsibility-row">
+            <div class="responsibility-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="responsibility-content">
+              <h5>Society & Individuals</h5>
+              <p>Stay informed, demand transparency, participate in public discourse, and make ethical choices about AI use.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Principles for Ethical AI -->
+      <section class="content-section">
+        <h2>Principles for Ethical AI</h2>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(16, 185, 129, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #10b981;">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </div>
+              <h4>Human-Centered</h4>
+            </div>
+            <p>AI should augment human capabilities, not replace human judgment in critical decisions. Keep humans in the loop.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(16, 185, 129, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #10b981;">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <path d="M22 4L12 14.01l-3-3"/>
+                </svg>
+              </div>
+              <h4>Beneficial</h4>
+            </div>
+            <p>AI should be designed to benefit humanity and minimize potential harms. Consider long-term societal impacts.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(16, 185, 129, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #10b981;">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="8" x2="12" y2="12"/>
+                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+              </div>
+              <h4>Explainable</h4>
+            </div>
+            <p>AI decisions should be understandable and explainable, especially when they significantly affect people's lives.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(16, 185, 129, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #10b981;">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <h4>Safe & Secure</h4>
+            </div>
+            <p>AI systems should be robust, secure against attacks, and designed with safety as a primary consideration.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="content-section">
+        <div class="definition-box" style="border-color: var(--secondary);">
+          <h4>Moving Forward Together</h4>
+          <p>AI ethics is not just a technical problem - it's a societal challenge that requires collaboration between technologists, policymakers, ethicists, and the public. By staying informed and engaged, we can help shape AI development in ways that benefit everyone.</p>
+        </div>
+      </section>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="generative-ai.html" class="page-nav-link prev">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <div>
+            <div class="page-nav-label">Previous</div>
+            <div class="page-nav-title">Generative AI</div>
+          </div>
+        </a>
+        <a href="../index.html" class="page-nav-link">
+          <div>
+            <div class="page-nav-label">Back to</div>
+            <div class="page-nav-title">Home</div>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Based on "Introduction to Artificial Intelligence" by Ahmed Banafa</p>
+    </div>
+  </footer>
+</body>
+</html>

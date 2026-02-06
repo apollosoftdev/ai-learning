@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Vision - AI Learning Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="../index.html" class="logo">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="16" cy="16" r="14"/>
+            <circle cx="16" cy="12" r="4"/>
+            <path d="M8 24c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+            <circle cx="10" cy="10" r="2" fill="currentColor"/>
+            <circle cx="22" cy="10" r="2" fill="currentColor"/>
+          </svg>
+          AI Learning Hub
+        </a>
+        <nav class="nav">
+          <a href="../index.html">Home</a>
+          <a href="what-is-ai.html">What is AI</a>
+          <a href="machine-learning.html">Machine Learning</a>
+          <a href="neural-networks.html">Neural Networks</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+        <span>Computer Vision</span>
+      </div>
+      <div class="page-title">
+        <div class="page-title-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Computer Vision</h1>
+          <p class="text-muted">How machines see and interpret visual information</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container">
+      <!-- Definition Section -->
+      <section class="content-section">
+        <h2>What is Computer Vision?</h2>
+
+        <div class="definition-box">
+          <h4>Computer Vision (CV)</h4>
+          <p>A field of artificial intelligence that enables computers to derive meaningful information from digital images, videos, and other visual inputs. It seeks to automate tasks that the human visual system can perform.</p>
+        </div>
+
+        <p>Computer Vision uses cameras, data, and algorithms to allow machines to see, identify, and process images in the same way that human vision does. It's powering applications from facial recognition to autonomous vehicles.</p>
+
+        <div class="process-flow">
+          <div class="flow-step">
+            <div class="flow-box">
+              <h4>Image/Video</h4>
+              <p>Visual input</p>
+            </div>
+          </div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="flow-step">
+            <div class="flow-box highlight">
+              <h4>Feature Extraction</h4>
+              <p>Detect patterns</p>
+            </div>
+          </div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="flow-step">
+            <div class="flow-box highlight">
+              <h4>Analysis</h4>
+              <p>CNN processing</p>
+            </div>
+          </div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="flow-step">
+            <div class="flow-box">
+              <h4>Understanding</h4>
+              <p>Objects, text</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CV Tasks -->
+      <section class="content-section">
+        <h2>Core Computer Vision Tasks</h2>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="M21 15l-5-5L5 21"/>
+                </svg>
+              </div>
+              <h4>Image Classification</h4>
+            </div>
+            <p>Assigning a label or category to an entire image. The foundational CV task.</p>
+            <ul>
+              <li>"This is a cat"</li>
+              <li>"This is a dog"</li>
+              <li>Single label per image</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="2"/>
+                  <rect x="6" y="6" width="5" height="5"/>
+                  <rect x="13" y="13" width="5" height="5"/>
+                </svg>
+              </div>
+              <h4>Object Detection</h4>
+            </div>
+            <p>Locating and classifying multiple objects within an image using bounding boxes.</p>
+            <ul>
+              <li>Find all objects</li>
+              <li>Draw bounding boxes</li>
+              <li>Label each object</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                  <path d="M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <h4>Image Segmentation</h4>
+            </div>
+            <p>Dividing an image into segments or regions, classifying each pixel.</p>
+            <ul>
+              <li>Semantic: class per pixel</li>
+              <li>Instance: separate objects</li>
+              <li>Precise boundaries</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+              <h4>Face Recognition</h4>
+            </div>
+            <p>Identifying or verifying a person from their face in images or videos.</p>
+            <ul>
+              <li>Face detection first</li>
+              <li>Feature extraction</li>
+              <li>Identity matching</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 7V4h16v3M9 20h6M12 4v16"/>
+                </svg>
+              </div>
+              <h4>OCR (Text Recognition)</h4>
+            </div>
+            <p>Detecting and recognizing text within images, converting visual text to digital text.</p>
+            <ul>
+              <li>Text detection</li>
+              <li>Character recognition</li>
+              <li>Document digitization</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="23 7 16 12 23 17 23 7"/>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                </svg>
+              </div>
+              <h4>Video Analysis</h4>
+            </div>
+            <p>Processing video frames for tracking, action recognition, and temporal understanding.</p>
+            <ul>
+              <li>Object tracking</li>
+              <li>Action recognition</li>
+              <li>Motion detection</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Applications -->
+      <section class="content-section">
+        <h2>Real-World Applications</h2>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(99, 102, 241, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #6366f1;">
+                  <rect x="1" y="3" width="15" height="13"/>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                  <circle cx="5.5" cy="18.5" r="2.5"/>
+                  <circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+              </div>
+              <h4>Self-Driving Cars</h4>
+            </div>
+            <p>Autonomous vehicles use CV to perceive their environment, detect obstacles, read signs, and navigate roads safely.</p>
+            <ul>
+              <li>Lane detection</li>
+              <li>Pedestrian detection</li>
+              <li>Traffic sign recognition</li>
+              <li>Obstacle avoidance</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(16, 185, 129, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #10b981;">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </div>
+              <h4>Medical Imaging</h4>
+            </div>
+            <p>AI assists doctors by analyzing X-rays, MRIs, CT scans to detect diseases, tumors, and abnormalities.</p>
+            <ul>
+              <li>Cancer detection</li>
+              <li>Retinal disease diagnosis</li>
+              <li>Radiology assistance</li>
+              <li>Pathology analysis</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(245, 158, 11, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #f59e0b;">
+                  <rect x="3" y="3" width="7" height="7"/>
+                  <rect x="14" y="3" width="7" height="7"/>
+                  <rect x="14" y="14" width="7" height="7"/>
+                  <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+              </div>
+              <h4>Manufacturing QA</h4>
+            </div>
+            <p>Automated quality control inspects products for defects faster and more accurately than human inspectors.</p>
+            <ul>
+              <li>Defect detection</li>
+              <li>Assembly verification</li>
+              <li>Package inspection</li>
+              <li>Measurement validation</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(236, 72, 153, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #ec4899;">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <h4>Security & Surveillance</h4>
+            </div>
+            <p>Monitoring video feeds for suspicious activity, unauthorized access, and safety threats.</p>
+            <ul>
+              <li>Facial recognition access</li>
+              <li>Anomaly detection</li>
+              <li>Crowd monitoring</li>
+              <li>License plate reading</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(139, 92, 246, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #8b5cf6;">
+                  <circle cx="9" cy="21" r="1"/>
+                  <circle cx="20" cy="21" r="1"/>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                </svg>
+              </div>
+              <h4>Retail & E-commerce</h4>
+            </div>
+            <p>Visual search, inventory management, and cashierless checkout experiences.</p>
+            <ul>
+              <li>Visual product search</li>
+              <li>Shelf monitoring</li>
+              <li>Amazon Go stores</li>
+              <li>Virtual try-on</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(6, 182, 212, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #06b6d4;">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <path d="M3.27 6.96L12 12.01l8.73-5.05"/>
+                </svg>
+              </div>
+              <h4>Augmented Reality</h4>
+            </div>
+            <p>Overlaying digital content on the real world by understanding the visual environment.</p>
+            <ul>
+              <li>AR filters (Snapchat)</li>
+              <li>IKEA furniture preview</li>
+              <li>Pokemon GO</li>
+              <li>Navigation overlays</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Connection to OCR -->
+      <section class="content-section">
+        <h2>OCR: A Computer Vision Application</h2>
+
+        <div class="definition-box" style="border-color: var(--secondary);">
+          <h4>This Demo App Uses Computer Vision</h4>
+          <p>The OCR demo you're exploring uses multiple CV techniques including text detection (locating text regions), character recognition (identifying letters), and scene text understanding (reading text in natural images).</p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <h4>keras-ocr</h4>
+            </div>
+            <p>Uses CRAFT for text detection and CRNN for recognition. Best for scene text in photos.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <path d="M14 2v6h6"/>
+                </svg>
+              </div>
+              <h4>docTR</h4>
+            </div>
+            <p>Uses DBNet detection and CRNN recognition. Optimized for document images.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 7V4h16v3M9 20h6M12 4v16"/>
+                </svg>
+              </div>
+              <h4>Tesseract</h4>
+            </div>
+            <p>Traditional OCR engine using LSTM networks. Supports 100+ languages.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/>
+                </svg>
+              </div>
+              <h4>PaddleOCR</h4>
+            </div>
+            <p>PP-OCR system with excellent Chinese support. Uses modern deep learning architectures.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="nlp.html" class="page-nav-link prev">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <div>
+            <div class="page-nav-label">Previous</div>
+            <div class="page-nav-title">Natural Language Processing</div>
+          </div>
+        </a>
+        <a href="ai-levels.html" class="page-nav-link">
+          <div>
+            <div class="page-nav-label">Next Topic</div>
+            <div class="page-nav-title">Levels of AI</div>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Based on "Introduction to Artificial Intelligence" by Ahmed Banafa</p>
+    </div>
+  </footer>
+</body>
+</html>

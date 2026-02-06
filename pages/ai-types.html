@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Types of AI - AI Learning Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .type-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .type-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .type-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+    .type-card.narrow::before { background: var(--gradient-1); }
+    .type-card.general::before { background: var(--gradient-2); }
+    .type-card.super::before { background: var(--gradient-4); }
+    .type-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .type-badge.exists { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+    .type-badge.theoretical { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+    .type-badge.hypothetical { background: rgba(236, 72, 153, 0.2); color: #ec4899; }
+    .type-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .type-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: white;
+    }
+    .type-icon.narrow { background: var(--gradient-1); }
+    .type-icon.general { background: var(--gradient-2); }
+    .type-icon.super { background: var(--gradient-4); }
+    .type-card h3 {
+      margin-bottom: 0.5rem;
+    }
+    .type-card > p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .movie-ref {
+      background: var(--dark);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+    }
+    .movie-ref h5 {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .movie-ref p {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="../index.html" class="logo">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="16" cy="16" r="14"/>
+            <circle cx="16" cy="12" r="4"/>
+            <path d="M8 24c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+            <circle cx="10" cy="10" r="2" fill="currentColor"/>
+            <circle cx="22" cy="10" r="2" fill="currentColor"/>
+          </svg>
+          AI Learning Hub
+        </a>
+        <nav class="nav">
+          <a href="../index.html">Home</a>
+          <a href="what-is-ai.html">What is AI</a>
+          <a href="machine-learning.html">Machine Learning</a>
+          <a href="neural-networks.html">Neural Networks</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+        <span>Types of AI</span>
+      </div>
+      <div class="page-title">
+        <div class="page-title-icon" style="background: linear-gradient(135deg, #f59e0b, #f97316);">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Types of AI</h1>
+          <p class="text-muted">Narrow AI, General AI, and Super AI</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container">
+      <!-- Overview Section -->
+      <section class="content-section">
+        <h2>AI Classification by Capability</h2>
+
+        <p>Artificial Intelligence can be classified based on its capabilities relative to human intelligence. This classification helps us understand where we are today and where AI might go in the future.</p>
+
+        <div class="type-cards">
+          <!-- Narrow AI -->
+          <div class="type-card narrow">
+            <span class="type-badge exists">EXISTS TODAY</span>
+            <div class="type-icon narrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v8M8 12h8"/>
+              </svg>
+            </div>
+            <h3>Narrow AI (Weak AI)</h3>
+            <p>AI designed to perform a specific task. It excels at its designated task but cannot transfer knowledge to other domains.</p>
+            <h5 style="color: var(--primary-light); font-size: 0.875rem; margin-bottom: 0.5rem;">Examples:</h5>
+            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+              <li>Siri, Alexa (voice assistants)</li>
+              <li>Google Search</li>
+              <li>Netflix recommendations</li>
+              <li>Face recognition</li>
+              <li>Self-driving features</li>
+              <li>ChatGPT (text generation)</li>
+            </ul>
+          </div>
+
+          <!-- General AI -->
+          <div class="type-card general">
+            <span class="type-badge theoretical">THEORETICAL</span>
+            <div class="type-icon general">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="10" r="3"/>
+                <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/>
+              </svg>
+            </div>
+            <h3>General AI (Strong AI / AGI)</h3>
+            <p>AI with human-level intelligence that can understand, learn, and apply knowledge across any domain, just like a human.</p>
+            <h5 style="color: var(--secondary); font-size: 0.875rem; margin-bottom: 0.5rem;">Capabilities:</h5>
+            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+              <li>Learn any intellectual task</li>
+              <li>Transfer knowledge between domains</li>
+              <li>Reason and solve novel problems</li>
+              <li>Understand context and nuance</li>
+              <li>Exhibit common sense</li>
+            </ul>
+            <div class="movie-ref">
+              <h5>In Fiction</h5>
+              <p>Data from Star Trek, JARVIS from Iron Man</p>
+            </div>
+          </div>
+
+          <!-- Super AI -->
+          <div class="type-card super">
+            <span class="type-badge hypothetical">HYPOTHETICAL</span>
+            <div class="type-icon super">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3>Super AI (ASI)</h3>
+            <p>AI that surpasses human intelligence in virtually every field including creativity, problem-solving, and social intelligence.</p>
+            <h5 style="color: #ec4899; font-size: 0.875rem; margin-bottom: 0.5rem;">Theoretical Abilities:</h5>
+            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+              <li>Exceed all human capabilities</li>
+              <li>Self-improve exponentially</li>
+              <li>Solve problems beyond human comprehension</li>
+              <li>Make scientific breakthroughs</li>
+              <li>Potentially achieve consciousness</li>
+            </ul>
+            <div class="movie-ref">
+              <h5>In Fiction</h5>
+              <p>Skynet (Terminator), Ultron (Avengers)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detailed Comparison -->
+      <section class="content-section">
+        <h2>Detailed Comparison</h2>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Narrow AI</th>
+              <th>General AI</th>
+              <th>Super AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Status</strong></td>
+              <td>Exists today</td>
+              <td>Theoretical</td>
+              <td>Hypothetical</td>
+            </tr>
+            <tr>
+              <td><strong>Intelligence</strong></td>
+              <td>Task-specific</td>
+              <td>Human-level</td>
+              <td>Beyond human</td>
+            </tr>
+            <tr>
+              <td><strong>Learning</strong></td>
+              <td>Within domain</td>
+              <td>Cross-domain</td>
+              <td>Self-improving</td>
+            </tr>
+            <tr>
+              <td><strong>Adaptability</strong></td>
+              <td>Limited</td>
+              <td>High</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td><strong>Consciousness</strong></td>
+              <td>None</td>
+              <td>Possibly</td>
+              <td>Likely</td>
+            </tr>
+            <tr>
+              <td><strong>Timeline</strong></td>
+              <td>Now</td>
+              <td>Unknown (decades?)</td>
+              <td>Unknown (if ever)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Current State -->
+      <section class="content-section">
+        <h2>Where We Are Today</h2>
+
+        <div class="definition-box">
+          <h4>All Current AI is Narrow AI</h4>
+          <p>Despite impressive advances like ChatGPT and self-driving cars, all AI systems today are Narrow AI. They excel at specific tasks but lack general understanding and cannot truly reason like humans.</p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <path d="M22 4L12 14.01l-3-3"/>
+                </svg>
+              </div>
+              <h4>What Narrow AI Can Do</h4>
+            </div>
+            <ul>
+              <li>Beat humans at specific games</li>
+              <li>Recognize faces with high accuracy</li>
+              <li>Generate human-like text</li>
+              <li>Translate between languages</li>
+              <li>Drive cars on highways</li>
+              <li>Detect diseases in medical images</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(239, 68, 68, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #ef4444;">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="15" y1="9" x2="9" y2="15"/>
+                  <line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+              </div>
+              <h4>What Narrow AI Cannot Do</h4>
+            </div>
+            <ul>
+              <li>Truly understand context</li>
+              <li>Apply knowledge to new domains</li>
+              <li>Exercise common sense reasoning</li>
+              <li>Learn efficiently from few examples</li>
+              <li>Explain its reasoning reliably</li>
+              <li>Handle unexpected situations well</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Path to AGI -->
+      <section class="content-section">
+        <h2>The Path to General AI</h2>
+
+        <p>Many researchers are working toward AGI, but significant challenges remain. Some believe it's inevitable; others think it may never be achieved.</p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                  <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+              </div>
+              <h4>Key Challenges</h4>
+            </div>
+            <ul>
+              <li>Understanding consciousness</li>
+              <li>Common sense reasoning</li>
+              <li>Transfer learning across domains</li>
+              <li>Energy efficiency (human brain: 20W)</li>
+              <li>Embodiment and physical interaction</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <h4>Ethical Concerns</h4>
+            </div>
+            <ul>
+              <li>Control and alignment</li>
+              <li>Economic disruption</li>
+              <li>Power concentration</li>
+              <li>Existential risk debates</li>
+              <li>Rights for sentient AI</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <h4>Timeline Predictions</h4>
+            </div>
+            <ul>
+              <li>Optimists: 2030-2050</li>
+              <li>Skeptics: Never or 100+ years</li>
+              <li>Most experts: Highly uncertain</li>
+              <li>Ray Kurzweil: 2045 (Singularity)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Singularity -->
+      <section class="content-section">
+        <h2>The Technological Singularity</h2>
+
+        <div class="definition-box" style="border-color: #ec4899;">
+          <h4>What is the Singularity?</h4>
+          <p>A hypothetical point in time when AI becomes capable of recursive self-improvement, leading to an intelligence explosion that fundamentally and unpredictably changes human civilization.</p>
+        </div>
+
+        <p>The concept, popularized by Ray Kurzweil, suggests that once AI can improve itself, advancement could become exponential and uncontrollable. Whether this is desirable, dangerous, or even possible remains hotly debated.</p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(16, 185, 129, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #10b981;">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <path d="M22 4L12 14.01l-3-3"/>
+                </svg>
+              </div>
+              <h4>Potential Benefits</h4>
+            </div>
+            <ul>
+              <li>Cure all diseases</li>
+              <li>Solve climate change</li>
+              <li>Eliminate poverty</li>
+              <li>Extend human lifespan</li>
+              <li>Solve unsolvable problems</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-card-icon" style="background: rgba(239, 68, 68, 0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: #ef4444;">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                  <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+              </div>
+              <h4>Potential Risks</h4>
+            </div>
+            <ul>
+              <li>Loss of human control</li>
+              <li>Misaligned AI goals</li>
+              <li>Mass unemployment</li>
+              <li>Existential threat</li>
+              <li>Unpredictable consequences</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="ai-levels.html" class="page-nav-link prev">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <div>
+            <div class="page-nav-label">Previous</div>
+            <div class="page-nav-title">Levels of AI</div>
+          </div>
+        </a>
+        <a href="generative-ai.html" class="page-nav-link">
+          <div>
+            <div class="page-nav-label">Next Topic</div>
+            <div class="page-nav-title">Generative AI</div>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Based on "Introduction to Artificial Intelligence" by Ahmed Banafa</p>
+    </div>
+  </footer>
+</body>
+</html>
