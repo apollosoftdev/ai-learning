@@ -57,6 +57,409 @@
     </div>
   </section>
 
+  <!-- AI Ecosystem Diagram -->
+  <section class="diagram-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>The AI Ecosystem</h2>
+        <p>How AI concepts, technologies, and applications connect to each other</p>
+      </div>
+      <div class="diagram-scroll">
+        <svg viewBox="0 0 1300 820" class="ai-diagram" id="aiDiagram">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <marker id="arrow" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,3 L0,6z" fill="#5a5a78"/>
+            </marker>
+            <marker id="arrow-hi" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,3 L0,6z" fill="var(--primary-light)"/>
+            </marker>
+          </defs>
+
+          <!-- ==================== CONNECTION LINES ==================== -->
+          <!-- Hierarchy: AI → ML → DL (thick, shows subset) -->
+          <line x1="555" y1="390" x2="440" y2="260" class="conn hierarchy" data-from="ai" data-to="ml"/>
+          <line x1="365" y1="260" x2="310" y2="420" class="conn hierarchy" data-from="ml" data-to="dl"/>
+
+          <!-- Hierarchy labels -->
+          <text x="485" y="310" class="conn-label" transform="rotate(-30 485 310)">includes</text>
+          <text x="322" y="340" class="conn-label" transform="rotate(-70 322 340)">includes</text>
+
+          <!-- ML → Learning Methods -->
+          <line x1="295" y1="238" x2="185" y2="145" class="conn branch" data-from="ml" data-to="supervised"/>
+          <line x1="290" y1="252" x2="185" y2="235" class="conn branch" data-from="ml" data-to="unsupervised"/>
+          <line x1="295" y1="270" x2="185" y2="325" class="conn branch" data-from="ml" data-to="reinforcement"/>
+
+          <!-- DL → Architectures -->
+          <line x1="245" y1="440" x2="160" y2="428" class="conn branch" data-from="dl" data-to="cnn"/>
+          <line x1="250" y1="460" x2="160" y2="508" class="conn branch" data-from="dl" data-to="rnn"/>
+          <line x1="265" y1="475" x2="175" y2="588" class="conn branch" data-from="dl" data-to="transformer"/>
+
+          <!-- AI → Applications -->
+          <line x1="745" y1="378" x2="890" y2="185" class="conn branch" data-from="ai" data-to="nlp"/>
+          <line x1="748" y1="390" x2="895" y2="315" class="conn branch" data-from="ai" data-to="cv"/>
+          <line x1="745" y1="405" x2="900" y2="445" class="conn branch" data-from="ai" data-to="robotics"/>
+          <line x1="735" y1="418" x2="890" y2="575" class="conn branch" data-from="ai" data-to="genai"/>
+
+          <!-- GenAI → Technologies -->
+          <line x1="1030" y1="568" x2="1130" y2="508" class="conn branch" data-from="genai" data-to="llms"/>
+          <line x1="1030" y1="580" x2="1130" y2="588" class="conn branch" data-from="genai" data-to="gans"/>
+          <line x1="1025" y1="598" x2="1130" y2="668" class="conn branch" data-from="genai" data-to="diffusion"/>
+
+          <!-- AI → Classifications (top) -->
+          <line x1="620" y1="365" x2="475" y2="95" class="conn branch" data-from="ai" data-to="ani"/>
+          <line x1="650" y1="362" x2="683" y2="95" class="conn branch" data-from="ai" data-to="agi"/>
+          <line x1="680" y1="365" x2="886" y2="95" class="conn branch" data-from="ai" data-to="asi"/>
+
+          <!-- Type progression arrows -->
+          <line x1="570" y1="70" x2="588" y2="70" class="conn progression" marker-end="url(#arrow)"/>
+          <line x1="778" y1="70" x2="796" y2="70" class="conn progression" marker-end="url(#arrow)"/>
+
+          <!-- AI → Ethics -->
+          <line x1="650" y1="418" x2="650" y2="705" class="conn branch" data-from="ai" data-to="ethics"/>
+
+          <!-- Ethics → sub-principles -->
+          <line x1="615" y1="735" x2="510" y2="775" class="conn branch" data-from="ethics" data-to="bias"/>
+          <line x1="640" y1="742" x2="620" y2="775" class="conn branch" data-from="ethics" data-to="privacy"/>
+          <line x1="660" y1="742" x2="730" y2="775" class="conn branch" data-from="ethics" data-to="safety"/>
+          <line x1="685" y1="735" x2="845" y2="775" class="conn branch" data-from="ethics" data-to="accountability"/>
+
+          <!-- ===== CROSS-CONNECTIONS (dashed curves) ===== -->
+          <!-- Transformer → NLP (powers) -->
+          <path d="M175,580 C320,520 700,200 890,180" class="conn cross" data-from="transformer" data-to="nlp"/>
+          <text x="500" y="340" class="conn-label cross-label">powers</text>
+
+          <!-- CNN → Computer Vision -->
+          <path d="M155,420 C350,360 700,300 895,310" class="conn cross" data-from="cnn" data-to="cv"/>
+
+          <!-- Transformer → LLMs -->
+          <path d="M175,595 C450,630 900,540 1130,510" class="conn cross" data-from="transformer" data-to="llms"/>
+
+          <!-- DL → Generative AI (enables) -->
+          <path d="M345,465 C500,520 750,570 890,575" class="conn cross" data-from="dl" data-to="genai"/>
+          <text x="610" y="540" class="conn-label cross-label">enables</text>
+
+          <!-- ==================== NODES ==================== -->
+
+          <!-- === Central: AI === -->
+          <g class="node node-ai" data-id="ai" data-href="pages/what-is-ai.html">
+            <rect x="535" y="355" width="230" height="66" rx="33"/>
+            <text x="650" y="395" class="node-text large">Artificial Intelligence</text>
+            <title>The broad field of creating intelligent machines that can perform tasks requiring human-like intelligence</title>
+          </g>
+
+          <!-- === Machine Learning === -->
+          <g class="node node-core" data-id="ml" data-href="pages/machine-learning.html">
+            <rect x="275" y="225" width="200" height="52" rx="26"/>
+            <text x="375" y="258" class="node-text medium">Machine Learning</text>
+            <title>Systems that learn and improve from data without being explicitly programmed</title>
+          </g>
+
+          <!-- === Deep Learning === -->
+          <g class="node node-core" data-id="dl" data-href="pages/neural-networks.html">
+            <rect x="225" y="418" width="180" height="52" rx="26"/>
+            <text x="315" y="451" class="node-text medium">Deep Learning</text>
+            <title>ML using multi-layered neural networks to learn complex patterns</title>
+          </g>
+
+          <!-- === ML Methods === -->
+          <g class="node node-method" data-id="supervised">
+            <rect x="42" y="116" width="160" height="42" rx="21"/>
+            <text x="122" y="144" class="node-text small">Supervised</text>
+            <title>Learning from labeled training data to make predictions</title>
+          </g>
+          <g class="node node-method" data-id="unsupervised">
+            <rect x="34" y="206" width="170" height="42" rx="21"/>
+            <text x="119" y="234" class="node-text small">Unsupervised</text>
+            <title>Finding hidden patterns and structures in unlabeled data</title>
+          </g>
+          <g class="node node-method" data-id="reinforcement">
+            <rect x="27" y="296" width="180" height="42" rx="21"/>
+            <text x="117" y="324" class="node-text small">Reinforcement</text>
+            <title>Learning optimal behavior through trial, error, and rewards</title>
+          </g>
+
+          <!-- === DL Architectures === -->
+          <g class="node node-arch" data-id="cnn">
+            <rect x="42" y="402" width="130" height="40" rx="20"/>
+            <text x="107" y="428" class="node-text tiny">CNN</text>
+            <title>Convolutional Neural Network — best for image and spatial data</title>
+          </g>
+          <g class="node node-arch" data-id="rnn">
+            <rect x="27" y="484" width="155" height="40" rx="20"/>
+            <text x="105" y="510" class="node-text tiny">RNN / LSTM</text>
+            <title>Recurrent Neural Network — best for sequential and time-series data</title>
+          </g>
+          <g class="node node-arch" data-id="transformer">
+            <rect x="37" y="564" width="155" height="40" rx="20"/>
+            <text x="115" y="590" class="node-text tiny">Transformer</text>
+            <title>Attention-based architecture powering modern AI (GPT, BERT, etc.)</title>
+          </g>
+
+          <!-- === Applications === -->
+          <g class="node node-app" data-id="nlp" data-href="pages/nlp.html">
+            <rect x="878" y="152" width="175" height="52" rx="26"/>
+            <text x="966" y="185" class="node-text medium">NLP</text>
+            <title>Natural Language Processing — AI that understands and generates human language</title>
+          </g>
+          <g class="node node-app" data-id="cv" data-href="pages/computer-vision.html">
+            <rect x="878" y="284" width="200" height="52" rx="26"/>
+            <text x="978" y="317" class="node-text medium">Computer Vision</text>
+            <title>AI that interprets and understands visual information from images and video</title>
+          </g>
+          <g class="node node-app" data-id="robotics">
+            <rect x="888" y="414" width="155" height="52" rx="26"/>
+            <text x="966" y="447" class="node-text medium">Robotics</text>
+            <title>AI-powered physical machines and automation systems</title>
+          </g>
+
+          <!-- === Generative AI === -->
+          <g class="node node-genai" data-id="genai" data-href="pages/generative-ai.html">
+            <rect x="873" y="549" width="185" height="52" rx="26"/>
+            <text x="966" y="582" class="node-text medium">Generative AI</text>
+            <title>AI that creates new content: text, images, code, music, and more</title>
+          </g>
+          <g class="node node-genai-sub" data-id="llms">
+            <rect x="1115" y="484" width="180" height="42" rx="21"/>
+            <text x="1205" y="512" class="node-text tiny">LLMs / ChatGPT</text>
+            <title>Large Language Models — GPT, Claude, Gemini, and other text-generating AI</title>
+          </g>
+          <g class="node node-genai-sub" data-id="gans">
+            <rect x="1115" y="564" width="130" height="42" rx="21"/>
+            <text x="1180" y="592" class="node-text tiny">GANs</text>
+            <title>Generative Adversarial Networks — two networks competing to create realistic data</title>
+          </g>
+          <g class="node node-genai-sub" data-id="diffusion">
+            <rect x="1115" y="644" width="180" height="42" rx="21"/>
+            <text x="1205" y="672" class="node-text tiny">Diffusion Models</text>
+            <title>Image generation by iteratively denoising random patterns (DALL-E, Stable Diffusion)</title>
+          </g>
+
+          <!-- === AI Types (top) === -->
+          <g class="node node-type" data-id="ani" data-href="pages/ai-types.html">
+            <rect x="380" y="45" width="190" height="50" rx="25"/>
+            <text x="475" y="77" class="node-text medium">Narrow AI (ANI)</text>
+            <title>Artificial Narrow Intelligence: specialized for one task (all current AI)</title>
+          </g>
+          <g class="node node-type" data-id="agi" data-href="pages/ai-types.html">
+            <rect x="588" y="45" width="190" height="50" rx="25"/>
+            <text x="683" y="77" class="node-text medium">General AI (AGI)</text>
+            <title>Artificial General Intelligence: human-level reasoning across all domains (future goal)</title>
+          </g>
+          <g class="node node-type" data-id="asi" data-href="pages/ai-types.html">
+            <rect x="796" y="45" width="180" height="50" rx="25"/>
+            <text x="886" y="77" class="node-text medium">Super AI (ASI)</text>
+            <title>Artificial Super Intelligence: surpassing human intelligence in every way (theoretical)</title>
+          </g>
+          <!-- Type progression label -->
+          <text x="650" y="40" class="type-label" text-anchor="middle">AI Types (current → future → theoretical)</text>
+
+          <!-- === AI Ethics (bottom) === -->
+          <g class="node node-ethics" data-id="ethics" data-href="pages/ethics.html">
+            <rect x="575" y="702" width="150" height="50" rx="25"/>
+            <text x="650" y="733" class="node-text medium">AI Ethics</text>
+            <title>Responsible AI development: ensuring fairness, safety, and accountability</title>
+          </g>
+          <g class="node node-ethics-sub" data-id="bias">
+            <rect x="435" y="772" width="140" height="38" rx="19"/>
+            <text x="505" y="797" class="node-text tiny">Bias &amp; Fairness</text>
+            <title>Ensuring AI systems don't discriminate based on race, gender, or other factors</title>
+          </g>
+          <g class="node node-ethics-sub" data-id="privacy">
+            <rect x="588" y="775" width="110" height="38" rx="19"/>
+            <text x="643" y="800" class="node-text tiny">Privacy</text>
+            <title>Protecting personal data and user rights in AI systems</title>
+          </g>
+          <g class="node node-ethics-sub" data-id="safety">
+            <rect x="710" y="775" width="100" height="38" rx="19"/>
+            <text x="760" y="800" class="node-text tiny">Safety</text>
+            <title>Ensuring AI systems behave reliably and don't cause harm</title>
+          </g>
+          <g class="node node-ethics-sub" data-id="accountability">
+            <rect x="822" y="772" width="160" height="38" rx="19"/>
+            <text x="902" y="797" class="node-text tiny">Accountability</text>
+            <title>Who is responsible when AI systems make mistakes?</title>
+          </g>
+
+          <!-- === Subset indicator badges === -->
+          <text x="370" y="206" class="badge-text">⊂ AI</text>
+          <text x="310" y="416" class="badge-text">⊂ ML</text>
+        </svg>
+        <div class="diagram-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:#6366f1"></span> Core AI</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#10b981"></span> Learning Methods</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span> Architectures</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#06b6d4"></span> Applications</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#ec4899"></span> Generative AI</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#8b5cf6"></span> Classifications</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#ef4444"></span> Ethics</span>
+          <span class="legend-sep"></span>
+          <span class="legend-item"><span class="legend-line solid"></span> Direct relation</span>
+          <span class="legend-item"><span class="legend-line dashed"></span> Cross-connection</span>
+        </div>
+        <p class="diagram-hint">Hover to explore connections &middot; Click nodes to learn more</p>
+      </div>
+    </div>
+  </section>
+  <style>
+    .diagram-section { padding: 3rem 0; background: var(--dark-light); }
+    .diagram-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .ai-diagram { width: 100%; min-width: 800px; height: auto; display: block; }
+
+    /* Connection lines */
+    .conn { stroke: #4a4a62; fill: none; stroke-width: 2; transition: all 0.3s ease; }
+    .conn.hierarchy { stroke-width: 3; stroke: #5a5a78; }
+    .conn.cross { stroke-dasharray: 6 4; stroke-width: 1.8; opacity: 0.45; stroke: #555572; }
+    .conn.progression { stroke-width: 2; stroke: #7c6bbd; opacity: 0.6; marker-end: url(#arrow); }
+    .conn-label { fill: var(--text-muted); font-size: 11px; font-style: italic; opacity: 0.7; }
+    .cross-label { opacity: 0.5; }
+
+    /* Node base styles */
+    .node { cursor: pointer; transition: all 0.3s ease; }
+    .node rect { stroke-width: 2; transition: all 0.3s ease; }
+    .node-text { fill: #e4e4e7; text-anchor: middle; font-family: 'Inter', sans-serif; pointer-events: none; }
+    .node-text.large { font-size: 16px; font-weight: 700; }
+    .node-text.medium { font-size: 14px; font-weight: 600; }
+    .node-text.small { font-size: 13px; font-weight: 500; }
+    .node-text.tiny { font-size: 12.5px; font-weight: 500; }
+
+    /* Node colors by category */
+    .node-ai rect { fill: #2a2a4a; stroke: #6366f1; }
+    .node-core rect { fill: #1e2a3e; stroke: #6366f1; }
+    .node-method rect { fill: #1a2e2a; stroke: #10b981; }
+    .node-arch rect { fill: #2e2a1a; stroke: #f59e0b; }
+    .node-app rect { fill: #1a2a2e; stroke: #06b6d4; }
+    .node-genai rect { fill: #2e1a2a; stroke: #ec4899; }
+    .node-genai-sub rect { fill: #2a1a28; stroke: #ec4899; opacity: 0.8; }
+    .node-type rect { fill: #251a30; stroke: #8b5cf6; }
+    .node-ethics rect { fill: #2e1a1a; stroke: #ef4444; }
+    .node-ethics-sub rect { fill: #2a1818; stroke: #ef4444; opacity: 0.8; }
+
+    /* Hover effects */
+    .node:hover rect { filter: url(#glow); stroke-width: 2.5; }
+    .node-ai:hover rect { fill: #33335a; stroke: #818cf8; }
+    .node-core:hover rect { fill: #253548; stroke: #818cf8; }
+    .node-method:hover rect { fill: #203832; stroke: #34d399; }
+    .node-arch:hover rect { fill: #383220; stroke: #fbbf24; }
+    .node-app:hover rect { fill: #203438; stroke: #22d3ee; }
+    .node-genai:hover rect { fill: #382035; stroke: #f472b6; }
+    .node-genai-sub:hover rect { fill: #321e30; stroke: #f472b6; opacity: 1; }
+    .node-type:hover rect { fill: #2e2040; stroke: #a78bfa; }
+    .node-ethics:hover rect { fill: #382020; stroke: #f87171; }
+    .node-ethics-sub:hover rect { fill: #321e1e; stroke: #f87171; opacity: 1; }
+
+    .node:hover .node-text { fill: #fff; }
+
+    /* Highlighted connections during hover */
+    .conn.highlight { stroke: var(--primary-light); opacity: 1 !important; stroke-width: 3; }
+    .conn.cross.highlight { opacity: 0.9 !important; stroke-width: 2.5; stroke: var(--primary-light); }
+    .conn.dimmed { opacity: 0.08; }
+    .node.dimmed rect { opacity: 0.2; }
+    .node.dimmed .node-text { opacity: 0.2; }
+
+    /* Subset badges */
+    .badge-text { fill: var(--text-muted); font-size: 9px; opacity: 0.5; font-family: 'Inter', sans-serif; }
+    .type-label { fill: var(--text-muted); font-size: 10.5px; font-family: 'Inter', sans-serif; opacity: 0.5; }
+
+    /* Legend */
+    .diagram-legend {
+      display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+      gap: 1rem; margin-top: 1.5rem; padding: 0.75rem 1rem;
+      background: var(--card-bg); border-radius: 0.75rem; border: 1px solid var(--border);
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-muted); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .legend-line { width: 20px; height: 2px; flex-shrink: 0; }
+    .legend-line.solid { background: var(--border); }
+    .legend-line.dashed { background: repeating-linear-gradient(90deg, var(--border) 0 4px, transparent 4px 7px); }
+    .legend-sep { width: 1px; height: 16px; background: var(--border); }
+    .diagram-hint { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 0.75rem; opacity: 0.6; }
+
+    /* Entry animations */
+    @keyframes nodeIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+    @keyframes connIn { from { opacity: 0; stroke-width: 0; } to { opacity: 1; } }
+    @keyframes crossIn { 0% { opacity: 0; stroke-dashoffset: 40; } 100% { opacity: 0.5; stroke-dashoffset: 0; } }
+
+    .ai-diagram .node { opacity: 0; animation: nodeIn 0.6s ease forwards; }
+    .ai-diagram .conn { opacity: 0; animation: connIn 0.6s ease forwards; }
+    .ai-diagram .conn.cross { animation: crossIn 1s ease-out forwards; }
+
+    /* Staggered delays — lines appear with their parent nodes */
+    .node-ai, .conn[data-from="ai"] { animation-delay: 0.1s; }
+    .node-core, .conn[data-from="ml"], .conn[data-from="dl"] { animation-delay: 0.2s; }
+    .node-type, .conn[data-to="ani"], .conn[data-to="agi"], .conn[data-to="asi"] { animation-delay: 0.25s; }
+    .node-app, .conn[data-to="nlp"], .conn[data-to="cv"], .conn[data-to="robotics"] { animation-delay: 0.3s; }
+    .node-method { animation-delay: 0.35s; }
+    .node-genai, .conn[data-to="genai"] { animation-delay: 0.4s; }
+    .node-arch { animation-delay: 0.45s; }
+    .node-ethics, .conn[data-to="ethics"] { animation-delay: 0.5s; }
+    .node-genai-sub, .conn[data-to="llms"], .conn[data-to="gans"], .conn[data-to="diffusion"] { animation-delay: 0.55s; }
+    .node-ethics-sub, .conn[data-to="bias"], .conn[data-to="privacy"], .conn[data-to="safety"], .conn[data-to="accountability"] { animation-delay: 0.6s; }
+    .conn.cross { animation-delay: 1.3s; }
+    .conn.progression { animation-delay: 0.3s; }
+  </style>
+  <script>
+  (function() {
+    var svg = document.getElementById('aiDiagram');
+    if (!svg) return;
+
+    // Build adjacency map from connection lines
+    var conns = svg.querySelectorAll('.conn[data-from]');
+    var nodes = svg.querySelectorAll('.node[data-id]');
+    var adjacency = {};
+
+    conns.forEach(function(c) {
+      var f = c.getAttribute('data-from'), t = c.getAttribute('data-to');
+      if (!adjacency[f]) adjacency[f] = [];
+      if (!adjacency[t]) adjacency[t] = [];
+      adjacency[f].push(t);
+      adjacency[t].push(f);
+    });
+
+    function highlight(id) {
+      var neighbors = adjacency[id] || [];
+      var related = new Set(neighbors);
+      related.add(id);
+
+      nodes.forEach(function(n) {
+        if (related.has(n.getAttribute('data-id'))) {
+          n.classList.remove('dimmed');
+        } else {
+          n.classList.add('dimmed');
+        }
+      });
+
+      conns.forEach(function(c) {
+        var f = c.getAttribute('data-from'), t = c.getAttribute('data-to');
+        if ((f === id || t === id)) {
+          c.classList.add('highlight');
+          c.classList.remove('dimmed');
+        } else {
+          c.classList.add('dimmed');
+          c.classList.remove('highlight');
+        }
+      });
+    }
+
+    function resetHighlight() {
+      nodes.forEach(function(n) { n.classList.remove('dimmed'); });
+      conns.forEach(function(c) { c.classList.remove('highlight', 'dimmed'); });
+    }
+
+    nodes.forEach(function(n) {
+      n.addEventListener('mouseenter', function() { highlight(n.getAttribute('data-id')); });
+      n.addEventListener('mouseleave', resetHighlight);
+      n.addEventListener('click', function() {
+        var href = n.getAttribute('data-href');
+        if (href) window.location.href = href;
+      });
+    });
+  })();
+  </script>
+
   <!-- Topics Section -->
   <section class="topics-section">
     <div class="container">
