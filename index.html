@@ -71,6 +71,10 @@
               <feGaussianBlur stdDeviation="3.5" result="blur"/>
               <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
+            <filter id="dotGlow">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
             <marker id="arrow" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
               <path d="M0,0 L10,3 L0,6z" fill="#5a5a78"/>
             </marker>
@@ -377,6 +381,7 @@
     .legend-line.dashed { background: repeating-linear-gradient(90deg, var(--border) 0 4px, transparent 4px 7px); }
     .legend-sep { width: 1px; height: 16px; background: var(--border); }
     .diagram-hint { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 0.75rem; opacity: 0.6; }
+    .flow-dot { filter: url(#dotGlow); pointer-events: none; }
 
     /* Entry animations */
     @keyframes nodeIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
@@ -405,6 +410,7 @@
   (function() {
     var svg = document.getElementById('aiDiagram');
     if (!svg) return;
+    var ns = 'http://www.w3.org/2000/svg';
 
     // Build adjacency map from connection lines
     var conns = svg.querySelectorAll('.conn[data-from]');
@@ -457,6 +463,66 @@
         if (href) window.location.href = href;
       });
     });
+
+    // --- Animated flowing dots on each connection line ---
+    var colorMap = {
+      ai: '#818cf8', ml: '#818cf8', dl: '#818cf8',
+      supervised: '#34d399', unsupervised: '#34d399', reinforcement: '#34d399',
+      cnn: '#fbbf24', rnn: '#fbbf24', transformer: '#fbbf24',
+      nlp: '#22d3ee', cv: '#22d3ee', robotics: '#22d3ee',
+      genai: '#f472b6', llms: '#f472b6', gans: '#f472b6', diffusion: '#f472b6',
+      ani: '#a78bfa', agi: '#a78bfa', asi: '#a78bfa',
+      ethics: '#f87171', bias: '#f87171', privacy: '#f87171', safety: '#f87171', accountability: '#f87171'
+    };
+
+    function createDot(conn) {
+      var to = conn.getAttribute('data-to');
+      var color = colorMap[to] || '#818cf8';
+      var isCross = conn.classList.contains('cross');
+      var pathData;
+
+      if (conn.tagName === 'line') {
+        var x1 = conn.getAttribute('x1'), y1 = conn.getAttribute('y1');
+        var x2 = conn.getAttribute('x2'), y2 = conn.getAttribute('y2');
+        pathData = 'M' + x1 + ',' + y1 + ' L' + x2 + ',' + y2;
+      } else if (conn.tagName === 'path') {
+        pathData = conn.getAttribute('d');
+      }
+      if (!pathData) return;
+
+      var dur = 3 + Math.random() * 2;
+      var begin = -(Math.random() * dur);
+      var r = isCross ? 2.5 : 3;
+
+      var circle = document.createElementNS(ns, 'circle');
+      circle.setAttribute('r', r);
+      circle.setAttribute('fill', color);
+      circle.setAttribute('opacity', '0');
+      circle.classList.add('flow-dot');
+
+      var motion = document.createElementNS(ns, 'animateMotion');
+      motion.setAttribute('dur', dur + 's');
+      motion.setAttribute('repeatCount', 'indefinite');
+      motion.setAttribute('path', pathData);
+      motion.setAttribute('begin', begin + 's');
+
+      var fade = document.createElementNS(ns, 'animate');
+      fade.setAttribute('attributeName', 'opacity');
+      fade.setAttribute('values', '0;0.85;0.85;0');
+      fade.setAttribute('keyTimes', '0;0.15;0.85;1');
+      fade.setAttribute('dur', dur + 's');
+      fade.setAttribute('repeatCount', 'indefinite');
+      fade.setAttribute('begin', begin + 's');
+
+      circle.appendChild(motion);
+      circle.appendChild(fade);
+      svg.appendChild(circle);
+    }
+
+    // Wait for entry animations to finish, then spawn dots
+    setTimeout(function() {
+      conns.forEach(createDot);
+    }, 1000);
   })();
   </script>
 
