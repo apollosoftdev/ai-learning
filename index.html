@@ -65,7 +65,7 @@
         <p>How AI concepts, technologies, and applications connect to each other</p>
       </div>
       <div class="diagram-scroll">
-        <svg viewBox="0 0 1300 820" class="ai-diagram" id="aiDiagram">
+        <svg viewBox="-180 0 1780 860" class="ai-diagram" id="aiDiagram">
           <defs>
             <filter id="glow">
               <feGaussianBlur stdDeviation="3.5" result="blur"/>
@@ -118,9 +118,7 @@
           <line x1="650" y1="362" x2="683" y2="95" class="conn branch" data-from="ai" data-to="agi"/>
           <line x1="680" y1="365" x2="886" y2="95" class="conn branch" data-from="ai" data-to="asi"/>
 
-          <!-- Type progression arrows -->
-          <line x1="570" y1="70" x2="588" y2="70" class="conn progression" marker-end="url(#arrow)"/>
-          <line x1="778" y1="70" x2="796" y2="70" class="conn progression" marker-end="url(#arrow)"/>
+          <!-- Type progression arrows removed -->
 
           <!-- AI → Ethics -->
           <line x1="650" y1="418" x2="650" y2="705" class="conn branch" data-from="ai" data-to="ethics"/>
@@ -148,149 +146,321 @@
 
           <!-- ==================== NODES ==================== -->
 
-          <!-- === Central: AI === -->
+          <!-- === Central: AI (hero node) === -->
           <g class="node node-ai" data-id="ai" data-href="pages/what-is-ai.html">
-            <rect x="535" y="355" width="230" height="66" rx="33"/>
-            <text x="650" y="395" class="node-text large">Artificial Intelligence</text>
+            <rect x="530" y="340" width="240" height="96" rx="20"/>
+            <g transform="translate(562,388)">
+              <circle r="16" fill="none" stroke="#818cf8" stroke-width="1.5" opacity="0.4"/>
+              <circle cy="-3" r="5" fill="none" stroke="#a5b4fc" stroke-width="1.2"/>
+              <path d="M-5,3 c0,4 2,6 5,6 s5,-2 5,-6" fill="none" stroke="#a5b4fc" stroke-width="1.2"/>
+              <circle cx="-3" cy="-5" r="1.5" fill="#a5b4fc"/>
+              <circle cx="3" cy="-5" r="1.5" fill="#a5b4fc"/>
+            </g>
+            <text x="668" y="393" class="node-text large">Artificial Intelligence</text>
             <title>The broad field of creating intelligent machines that can perform tasks requiring human-like intelligence</title>
           </g>
 
           <!-- === Machine Learning === -->
           <g class="node node-core" data-id="ml" data-href="pages/machine-learning.html">
-            <rect x="275" y="225" width="200" height="52" rx="26"/>
-            <text x="375" y="258" class="node-text medium">Machine Learning</text>
+            <rect x="270" y="222" width="210" height="58" rx="16"/>
+            <g transform="translate(302,251)">
+              <circle r="5" fill="none" stroke="#818cf8" stroke-width="1.3"/>
+              <circle r="2" fill="#818cf8" opacity="0.4"/>
+              <path d="M0,-7.5 v2 M0,5.5 v2 M-7.5,0 h2 M5.5,0 h2 M-5,-5 l1.2,1.2 M3.8,3.8 l1.2,1.2 M-5,5 l1.2,-1.2 M3.8,-3.8 l1.2,-1.2" stroke="#818cf8" stroke-width="1"/>
+            </g>
+            <text x="395" y="257" class="node-text medium">Machine Learning</text>
             <title>Systems that learn and improve from data without being explicitly programmed</title>
           </g>
 
           <!-- === Deep Learning === -->
           <g class="node node-core" data-id="dl" data-href="pages/neural-networks.html">
-            <rect x="225" y="418" width="180" height="52" rx="26"/>
-            <text x="315" y="451" class="node-text medium">Deep Learning</text>
+            <rect x="220" y="416" width="190" height="58" rx="16"/>
+            <g transform="translate(254,445)">
+              <path d="M0,-8 l-11,5 11,5 11,-5z" fill="none" stroke="#818cf8" stroke-width="1.2"/>
+              <path d="M-11,0 l11,5 11,-5" fill="none" stroke="#818cf8" stroke-width="1.2" opacity="0.7"/>
+              <path d="M-11,4 l11,5 11,-5" fill="none" stroke="#818cf8" stroke-width="1.2" opacity="0.45"/>
+            </g>
+            <text x="338" y="451" class="node-text medium">Deep Learning</text>
             <title>ML using multi-layered neural networks to learn complex patterns</title>
           </g>
 
           <!-- === ML Methods === -->
           <g class="node node-method" data-id="supervised">
-            <rect x="42" y="116" width="160" height="42" rx="21"/>
-            <text x="122" y="144" class="node-text small">Supervised</text>
+            <rect x="30" y="112" width="175" height="48" rx="14"/>
+            <g transform="translate(62,136)">
+              <path d="M-6,0 l5,-5 h6 v10 h-6z" fill="none" stroke="#34d399" stroke-width="1.2"/>
+              <circle cx="3" r="1.5" fill="#34d399"/>
+            </g>
+            <text x="135" y="142" class="node-text small">Supervised</text>
             <title>Learning from labeled training data to make predictions</title>
           </g>
           <g class="node node-method" data-id="unsupervised">
-            <rect x="34" y="206" width="170" height="42" rx="21"/>
-            <text x="119" y="234" class="node-text small">Unsupervised</text>
+            <rect x="22" y="202" width="185" height="48" rx="14"/>
+            <g transform="translate(54,226)">
+              <circle cx="-4" cy="-4" r="2" fill="#34d399" opacity="0.7"/>
+              <circle cx="4" cy="2" r="2" fill="#34d399" opacity="0.7"/>
+              <circle cx="-2" cy="4" r="2" fill="#34d399" opacity="0.6"/>
+              <circle cx="5" cy="-5" r="1.8" fill="#34d399" opacity="0.5"/>
+              <circle cx="0" cy="-1" r="1.5" fill="#34d399" opacity="0.6"/>
+            </g>
+            <text x="132" y="232" class="node-text small">Unsupervised</text>
             <title>Finding hidden patterns and structures in unlabeled data</title>
           </g>
           <g class="node node-method" data-id="reinforcement">
-            <rect x="27" y="296" width="180" height="42" rx="21"/>
-            <text x="117" y="324" class="node-text small">Reinforcement</text>
+            <rect x="15" y="292" width="200" height="48" rx="14"/>
+            <g transform="translate(48,316)">
+              <path d="M-5,-6 h10 v5 c0,4 -5,6 -5,6 s-5,-2 -5,-6z" fill="none" stroke="#34d399" stroke-width="1.2"/>
+              <line x1="0" y1="6" x2="0" y2="8" stroke="#34d399" stroke-width="1.2"/>
+              <line x1="-3" y1="8" x2="3" y2="8" stroke="#34d399" stroke-width="1.2"/>
+            </g>
+            <text x="135" y="322" class="node-text small">Reinforcement</text>
             <title>Learning optimal behavior through trial, error, and rewards</title>
           </g>
 
           <!-- === DL Architectures === -->
           <g class="node node-arch" data-id="cnn">
-            <rect x="42" y="402" width="130" height="40" rx="20"/>
-            <text x="107" y="428" class="node-text tiny">CNN</text>
+            <rect x="35" y="398" width="145" height="46" rx="14"/>
+            <g transform="translate(68,421)">
+              <rect x="-8" y="-8" width="16" height="16" rx="2" fill="none" stroke="#fbbf24" stroke-width="1.2"/>
+              <line x1="-3" y1="-8" x2="-3" y2="8" stroke="#fbbf24" stroke-width="0.8"/>
+              <line x1="3" y1="-8" x2="3" y2="8" stroke="#fbbf24" stroke-width="0.8"/>
+              <line x1="-8" y1="-3" x2="8" y2="-3" stroke="#fbbf24" stroke-width="0.8"/>
+              <line x1="-8" y1="3" x2="8" y2="3" stroke="#fbbf24" stroke-width="0.8"/>
+            </g>
+            <text x="125" y="427" class="node-text small">CNN</text>
             <title>Convolutional Neural Network — best for image and spatial data</title>
           </g>
           <g class="node node-arch" data-id="rnn">
-            <rect x="27" y="484" width="155" height="40" rx="20"/>
-            <text x="105" y="510" class="node-text tiny">RNN / LSTM</text>
+            <rect x="20" y="480" width="170" height="46" rx="14"/>
+            <g transform="translate(53,503)">
+              <path d="M-7,0 h10 a5,5 0 0,1 0,6 h-10 a5,5 0 0,1 0,-6" fill="none" stroke="#fbbf24" stroke-width="1.2"/>
+              <path d="M2,-4 l3,3 -3,3" fill="none" stroke="#fbbf24" stroke-width="1"/>
+            </g>
+            <text x="125" y="509" class="node-text small">RNN / LSTM</text>
             <title>Recurrent Neural Network — best for sequential and time-series data</title>
           </g>
           <g class="node node-arch" data-id="transformer">
-            <rect x="37" y="564" width="155" height="40" rx="20"/>
-            <text x="115" y="590" class="node-text tiny">Transformer</text>
+            <rect x="30" y="560" width="170" height="46" rx="14"/>
+            <g transform="translate(63,583)">
+              <path d="M2,-8 l-6,9 h5 l-3,7 8,-10 h-5z" fill="none" stroke="#fbbf24" stroke-width="1.2"/>
+            </g>
+            <text x="135" y="589" class="node-text small">Transformer</text>
             <title>Attention-based architecture powering modern AI (GPT, BERT, etc.)</title>
           </g>
 
           <!-- === Applications === -->
           <g class="node node-app" data-id="nlp" data-href="pages/nlp.html">
-            <rect x="878" y="152" width="175" height="52" rx="26"/>
-            <text x="966" y="185" class="node-text medium">NLP</text>
+            <rect x="870" y="148" width="190" height="58" rx="16"/>
+            <g transform="translate(904,177)">
+              <path d="M-9,-8 h16 a3,3 0 0,1 3,3 v8 a3,3 0 0,1 -3,3 h-10 l-4,4 v-4 h-2 a3,3 0 0,1 -3,-3 v-8 a3,3 0 0,1 3,-3z" fill="none" stroke="#22d3ee" stroke-width="1.2"/>
+              <line x1="-6" y1="-3" x2="5" y2="-3" stroke="#22d3ee" stroke-width="1" opacity="0.6"/>
+              <line x1="-6" y1="1" x2="2" y2="1" stroke="#22d3ee" stroke-width="1" opacity="0.6"/>
+            </g>
+            <text x="982" y="183" class="node-text medium">NLP</text>
             <title>Natural Language Processing — AI that understands and generates human language</title>
           </g>
           <g class="node node-app" data-id="cv" data-href="pages/computer-vision.html">
-            <rect x="878" y="284" width="200" height="52" rx="26"/>
-            <text x="978" y="317" class="node-text medium">Computer Vision</text>
+            <rect x="870" y="280" width="215" height="58" rx="16"/>
+            <g transform="translate(905,309)">
+              <path d="M-12,0 c5,-8 19,-8 24,0 c-5,8 -19,8 -24,0z" fill="none" stroke="#22d3ee" stroke-width="1.2"/>
+              <circle r="3.5" fill="none" stroke="#22d3ee" stroke-width="1.2"/>
+              <circle r="1.2" fill="#22d3ee"/>
+            </g>
+            <text x="998" y="315" class="node-text medium">Computer Vision</text>
             <title>AI that interprets and understands visual information from images and video</title>
           </g>
           <g class="node node-app" data-id="robotics">
-            <rect x="888" y="414" width="155" height="52" rx="26"/>
-            <text x="966" y="447" class="node-text medium">Robotics</text>
+            <rect x="880" y="410" width="170" height="58" rx="16"/>
+            <g transform="translate(915,439)">
+              <rect x="-6" y="-8" width="12" height="10" rx="2" fill="none" stroke="#22d3ee" stroke-width="1.2"/>
+              <circle cy="-11" r="1.5" fill="#22d3ee" opacity="0.6"/>
+              <line y1="-9.5" y2="-8" stroke="#22d3ee" stroke-width="1"/>
+              <circle cx="-3" cy="-4" r="1" fill="#22d3ee"/>
+              <circle cx="3" cy="-4" r="1" fill="#22d3ee"/>
+              <line x1="-8" y1="0" x2="-10" y2="5" stroke="#22d3ee" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="8" y1="0" x2="10" y2="5" stroke="#22d3ee" stroke-width="1.2" stroke-linecap="round"/>
+            </g>
+            <text x="982" y="445" class="node-text medium">Robotics</text>
             <title>AI-powered physical machines and automation systems</title>
           </g>
 
           <!-- === Generative AI === -->
           <g class="node node-genai" data-id="genai" data-href="pages/generative-ai.html">
-            <rect x="873" y="549" width="185" height="52" rx="26"/>
-            <text x="966" y="582" class="node-text medium">Generative AI</text>
+            <rect x="865" y="545" width="200" height="58" rx="16"/>
+            <g transform="translate(900,574)">
+              <path d="M0,-8 l2,5 5,2 -5,2 -2,5 -2,-5 -5,-2 5,-2z" fill="#ec4899" opacity="0.25" stroke="#f472b6" stroke-width="0.8"/>
+              <circle r="2" fill="#f472b6"/>
+              <circle cx="7" cy="-6" r="1.3" fill="#f472b6" opacity="0.5"/>
+              <circle cx="-6" cy="6" r="1" fill="#f472b6" opacity="0.4"/>
+            </g>
+            <text x="980" y="580" class="node-text medium">Generative AI</text>
             <title>AI that creates new content: text, images, code, music, and more</title>
           </g>
           <g class="node node-genai-sub" data-id="llms">
-            <rect x="1115" y="484" width="180" height="42" rx="21"/>
-            <text x="1205" y="512" class="node-text tiny">LLMs / ChatGPT</text>
+            <rect x="1108" y="480" width="190" height="48" rx="14"/>
+            <g transform="translate(1138,504)">
+              <rect x="-6" y="-8" width="12" height="16" rx="1.5" fill="none" stroke="#f472b6" stroke-width="1.1"/>
+              <line x1="-3" y1="-4" x2="3" y2="-4" stroke="#f472b6" stroke-width="0.8" opacity="0.6"/>
+              <line x1="-3" y1="0" x2="2" y2="0" stroke="#f472b6" stroke-width="0.8" opacity="0.6"/>
+              <line x1="-3" y1="4" x2="3" y2="4" stroke="#f472b6" stroke-width="0.8" opacity="0.6"/>
+            </g>
+            <text x="1218" y="510" class="node-text small">LLMs / ChatGPT</text>
             <title>Large Language Models — GPT, Claude, Gemini, and other text-generating AI</title>
           </g>
           <g class="node node-genai-sub" data-id="gans">
-            <rect x="1115" y="564" width="130" height="42" rx="21"/>
-            <text x="1180" y="592" class="node-text tiny">GANs</text>
+            <rect x="1108" y="560" width="145" height="48" rx="14"/>
+            <g transform="translate(1138,584)">
+              <path d="M-7,0 l4,-5 v3 h6 v-3 l4,5 -4,5 v-3 h-6 v3z" fill="none" stroke="#f472b6" stroke-width="1.1"/>
+            </g>
+            <text x="1195" y="590" class="node-text small">GANs</text>
             <title>Generative Adversarial Networks — two networks competing to create realistic data</title>
           </g>
           <g class="node node-genai-sub" data-id="diffusion">
-            <rect x="1115" y="644" width="180" height="42" rx="21"/>
-            <text x="1205" y="672" class="node-text tiny">Diffusion Models</text>
+            <rect x="1108" y="640" width="190" height="48" rx="14"/>
+            <g transform="translate(1138,664)">
+              <circle cx="-4" cy="1" r="5" fill="none" stroke="#f472b6" stroke-width="1.1"/>
+              <circle cx="3" cy="-2" r="4" fill="none" stroke="#f472b6" stroke-width="1.1"/>
+              <circle cx="8" cy="2" r="3" fill="none" stroke="#f472b6" stroke-width="1.1"/>
+            </g>
+            <text x="1218" y="670" class="node-text small">Diffusion Models</text>
             <title>Image generation by iteratively denoising random patterns (DALL-E, Stable Diffusion)</title>
           </g>
 
           <!-- === AI Types (top) === -->
           <g class="node node-type" data-id="ani" data-href="pages/ai-types.html">
-            <rect x="380" y="45" width="190" height="50" rx="25"/>
-            <text x="475" y="77" class="node-text medium">Narrow AI (ANI)</text>
+            <rect x="375" y="42" width="195" height="56" rx="16"/>
+            <g transform="translate(408,70)">
+              <circle r="8" fill="none" stroke="#a78bfa" stroke-width="1.2"/>
+              <circle r="4" fill="none" stroke="#a78bfa" stroke-width="0.8" opacity="0.6"/>
+              <circle r="2" fill="#a78bfa" opacity="0.5"/>
+            </g>
+            <text x="492" y="76" class="node-text medium">Narrow AI (ANI)</text>
             <title>Artificial Narrow Intelligence: specialized for one task (all current AI)</title>
           </g>
           <g class="node node-type" data-id="agi" data-href="pages/ai-types.html">
-            <rect x="588" y="45" width="190" height="50" rx="25"/>
-            <text x="683" y="77" class="node-text medium">General AI (AGI)</text>
+            <rect x="586" y="42" width="195" height="56" rx="16"/>
+            <g transform="translate(618,70)">
+              <path d="M0,-8 c-4,0 -7,3 -7,6 c-2,0 -3,2 -3,4 s1,4 3,4 c0,2 3,4 7,4 s7,-2 7,-4 c2,0 3,-2 3,-4 s-1,-4 -3,-4 c0,-3 -3,-6 -7,-6z" fill="none" stroke="#a78bfa" stroke-width="1.1"/>
+              <line y1="-8" y2="6" stroke="#a78bfa" stroke-width="0.7" opacity="0.4"/>
+            </g>
+            <text x="702" y="76" class="node-text medium">General AI (AGI)</text>
             <title>Artificial General Intelligence: human-level reasoning across all domains (future goal)</title>
           </g>
           <g class="node node-type" data-id="asi" data-href="pages/ai-types.html">
-            <rect x="796" y="45" width="180" height="50" rx="25"/>
-            <text x="886" y="77" class="node-text medium">Super AI (ASI)</text>
+            <rect x="797" y="42" width="185" height="56" rx="16"/>
+            <g transform="translate(830,70)">
+              <path d="M0,0 c-3,-6 -9,-6 -9,0 s6,6 9,0 c3,-6 9,-6 9,0 s-6,6 -9,0" fill="none" stroke="#a78bfa" stroke-width="1.3"/>
+            </g>
+            <text x="908" y="76" class="node-text medium">Super AI (ASI)</text>
             <title>Artificial Super Intelligence: surpassing human intelligence in every way (theoretical)</title>
           </g>
-          <!-- Type progression label -->
-          <text x="650" y="40" class="type-label" text-anchor="middle">AI Types (current → future → theoretical)</text>
+          <text x="683" y="36" class="type-label" text-anchor="middle">AI Types (current → future → theoretical)</text>
 
           <!-- === AI Ethics (bottom) === -->
           <g class="node node-ethics" data-id="ethics" data-href="pages/ethics.html">
-            <rect x="575" y="702" width="150" height="50" rx="25"/>
-            <text x="650" y="733" class="node-text medium">AI Ethics</text>
+            <rect x="568" y="698" width="164" height="56" rx="16"/>
+            <g transform="translate(600,726)">
+              <path d="M0,-10 l9,4 v7 c0,5 -9,9 -9,9 s-9,-4 -9,-9 v-7z" fill="none" stroke="#f87171" stroke-width="1.2"/>
+              <path d="M-3,0 l3,3 5,-5" fill="none" stroke="#f87171" stroke-width="1.2"/>
+            </g>
+            <text x="665" y="732" class="node-text medium">AI Ethics</text>
             <title>Responsible AI development: ensuring fairness, safety, and accountability</title>
           </g>
           <g class="node node-ethics-sub" data-id="bias">
-            <rect x="435" y="772" width="140" height="38" rx="19"/>
-            <text x="505" y="797" class="node-text tiny">Bias &amp; Fairness</text>
+            <rect x="428" y="770" width="155" height="42" rx="14"/>
+            <g transform="translate(460,791)">
+              <line y1="-8" y2="4" stroke="#f87171" stroke-width="1.1"/>
+              <line x1="-7" y1="-5" x2="7" y2="-5" stroke="#f87171" stroke-width="1.1"/>
+              <path d="M-9,-2 l2,-3 2,3" fill="none" stroke="#f87171" stroke-width="1"/>
+              <path d="M5,-2 l2,-3 2,3" fill="none" stroke="#f87171" stroke-width="1"/>
+              <line x1="-2" y1="4" x2="2" y2="4" stroke="#f87171" stroke-width="1.1"/>
+            </g>
+            <text x="522" y="797" class="node-text small">Bias &amp; Fairness</text>
             <title>Ensuring AI systems don't discriminate based on race, gender, or other factors</title>
           </g>
           <g class="node node-ethics-sub" data-id="privacy">
-            <rect x="588" y="775" width="110" height="38" rx="19"/>
-            <text x="643" y="800" class="node-text tiny">Privacy</text>
+            <rect x="596" y="773" width="120" height="42" rx="14"/>
+            <g transform="translate(628,794)">
+              <rect x="-5" y="-1" width="10" height="8" rx="1.5" fill="none" stroke="#f87171" stroke-width="1.1"/>
+              <path d="M-3,-1 v-3 a3,3 0 0,1 6,0 v3" fill="none" stroke="#f87171" stroke-width="1.1"/>
+            </g>
+            <text x="670" y="800" class="node-text small">Privacy</text>
             <title>Protecting personal data and user rights in AI systems</title>
           </g>
           <g class="node node-ethics-sub" data-id="safety">
-            <rect x="710" y="775" width="100" height="38" rx="19"/>
-            <text x="760" y="800" class="node-text tiny">Safety</text>
+            <rect x="729" y="773" width="110" height="42" rx="14"/>
+            <g transform="translate(760,794)">
+              <path d="M0,-7 l7,12 h-14z" fill="none" stroke="#f87171" stroke-width="1.1"/>
+              <line y1="-3" y2="1" stroke="#f87171" stroke-width="1.1"/>
+              <circle cy="3" r="0.8" fill="#f87171"/>
+            </g>
+            <text x="800" y="800" class="node-text small">Safety</text>
             <title>Ensuring AI systems behave reliably and don't cause harm</title>
           </g>
           <g class="node node-ethics-sub" data-id="accountability">
-            <rect x="822" y="772" width="160" height="38" rx="19"/>
-            <text x="902" y="797" class="node-text tiny">Accountability</text>
+            <rect x="852" y="770" width="175" height="42" rx="14"/>
+            <g transform="translate(884,791)">
+              <rect x="-5" y="-8" width="10" height="14" rx="1.5" fill="none" stroke="#f87171" stroke-width="1.1"/>
+              <path d="M-2,-8 v-2 h4 v2" fill="none" stroke="#f87171" stroke-width="1"/>
+              <path d="M-3,-2 l2,2 4,-4" fill="none" stroke="#f87171" stroke-width="1"/>
+            </g>
+            <text x="955" y="797" class="node-text small">Accountability</text>
             <title>Who is responsible when AI systems make mistakes?</title>
           </g>
 
+          <!-- === Example nodes === -->
+
+          <!-- NLP examples -->
+          <line x1="1060" y1="168" x2="1210" y2="150" class="conn example" data-from="nlp" data-to="ex-chatbots"/>
+          <line x1="1060" y1="186" x2="1210" y2="196" class="conn example" data-from="nlp" data-to="ex-translate"/>
+          <g class="node node-example node-app" data-id="ex-chatbots"><rect x="1210" y="135" width="105" height="28" rx="14"/><text x="1263" y="154" class="node-text example-text">Chatbots</text></g>
+          <g class="node node-example node-app" data-id="ex-translate"><rect x="1210" y="182" width="115" height="28" rx="14"/><text x="1268" y="201" class="node-text example-text">Translation</text></g>
+
+          <!-- CV examples -->
+          <line x1="1085" y1="300" x2="1230" y2="282" class="conn example" data-from="cv" data-to="ex-facerecog"/>
+          <line x1="1085" y1="318" x2="1230" y2="328" class="conn example" data-from="cv" data-to="ex-selfdriving"/>
+          <g class="node node-example node-app" data-id="ex-facerecog"><rect x="1230" y="268" width="145" height="28" rx="14"/><text x="1303" y="287" class="node-text example-text">Face Recognition</text></g>
+          <g class="node node-example node-app" data-id="ex-selfdriving"><rect x="1230" y="314" width="130" height="28" rx="14"/><text x="1295" y="333" class="node-text example-text">Self-Driving</text></g>
+          <line x1="1085" y1="332" x2="1230" y2="362" class="conn example" data-from="cv" data-to="ex-imagerecog"/>
+          <g class="node node-example node-app" data-id="ex-imagerecog" data-href="https://github.com/apollosoftdev/image-recognition-app"><rect x="1230" y="350" width="165" height="28" rx="14"/><text x="1313" y="369" class="node-text example-text">Image Recognition</text></g>
+
+          <!-- Robotics examples -->
+          <line x1="1050" y1="432" x2="1210" y2="420" class="conn example" data-from="robotics" data-to="ex-drones"/>
+          <line x1="1050" y1="450" x2="1210" y2="462" class="conn example" data-from="robotics" data-to="ex-mfg"/>
+          <g class="node node-example node-app" data-id="ex-drones"><rect x="1210" y="406" width="100" height="28" rx="14"/><text x="1260" y="425" class="node-text example-text">Drones</text></g>
+          <g class="node node-example node-app" data-id="ex-mfg"><rect x="1210" y="448" width="140" height="28" rx="14"/><text x="1280" y="467" class="node-text example-text">Manufacturing</text></g>
+
+          <!-- Supervised examples -->
+          <line x1="30" y1="136" x2="-35" y2="133" class="conn example" data-from="supervised" data-to="ex-classify"/>
+          <g class="node node-example node-method" data-id="ex-classify"><rect x="-160" y="120" width="125" height="26" rx="13"/><text x="-97" y="138" class="node-text example-text">Classification</text></g>
+
+          <!-- Unsupervised examples -->
+          <line x1="22" y1="226" x2="-40" y2="231" class="conn example" data-from="unsupervised" data-to="ex-cluster"/>
+          <g class="node node-example node-method" data-id="ex-cluster"><rect x="-155" y="218" width="115" height="26" rx="13"/><text x="-97" y="236" class="node-text example-text">Clustering</text></g>
+
+          <!-- Reinforcement examples -->
+          <line x1="15" y1="316" x2="-30" y2="321" class="conn example" data-from="reinforcement" data-to="ex-games"/>
+          <g class="node node-example node-method" data-id="ex-games"><rect x="-140" y="308" width="110" height="26" rx="13"/><text x="-85" y="326" class="node-text example-text">Game AI</text></g>
+
+          <!-- LLMs examples -->
+          <line x1="1298" y1="498" x2="1430" y2="484" class="conn example" data-from="llms" data-to="ex-gpt"/>
+          <line x1="1298" y1="512" x2="1430" y2="522" class="conn example" data-from="llms" data-to="ex-claude"/>
+          <g class="node node-example node-genai-sub" data-id="ex-gpt"><rect x="1430" y="470" width="80" height="26" rx="13"/><text x="1470" y="488" class="node-text example-text">GPT</text></g>
+          <g class="node node-example node-genai-sub" data-id="ex-claude"><rect x="1430" y="508" width="90" height="26" rx="13"/><text x="1475" y="526" class="node-text example-text">Claude</text></g>
+
+          <!-- GANs examples -->
+          <line x1="1253" y1="584" x2="1430" y2="584" class="conn example" data-from="gans" data-to="ex-deepfake"/>
+          <g class="node node-example node-genai-sub" data-id="ex-deepfake"><rect x="1430" y="570" width="100" height="26" rx="13"/><text x="1480" y="588" class="node-text example-text">Deepfake</text></g>
+
+          <!-- Diffusion examples -->
+          <line x1="1298" y1="658" x2="1430" y2="646" class="conn example" data-from="diffusion" data-to="ex-dalle"/>
+          <line x1="1298" y1="672" x2="1430" y2="684" class="conn example" data-from="diffusion" data-to="ex-sd"/>
+          <g class="node node-example node-genai-sub" data-id="ex-dalle"><rect x="1430" y="632" width="95" height="26" rx="13"/><text x="1478" y="650" class="node-text example-text">DALL-E</text></g>
+          <g class="node node-example node-genai-sub" data-id="ex-sd"><rect x="1430" y="670" width="105" height="26" rx="13"/><text x="1483" y="688" class="node-text example-text">MidJourney</text></g>
+
           <!-- === Subset indicator badges === -->
-          <text x="370" y="206" class="badge-text">⊂ AI</text>
-          <text x="310" y="416" class="badge-text">⊂ ML</text>
+          <text x="375" y="210" class="badge-text">⊂ AI</text>
+          <text x="315" y="410" class="badge-text">⊂ ML</text>
         </svg>
         <div class="diagram-legend">
           <span class="legend-item"><span class="legend-dot" style="background:#6366f1"></span> Core AI</span>
@@ -324,11 +494,12 @@
     /* Node base styles */
     .node { cursor: pointer; transition: all 0.3s ease; }
     .node rect { stroke-width: 2; transition: all 0.3s ease; }
-    .node-text { fill: #e4e4e7; text-anchor: middle; font-family: 'Inter', sans-serif; pointer-events: none; }
-    .node-text.large { font-size: 16px; font-weight: 700; }
-    .node-text.medium { font-size: 14px; font-weight: 600; }
-    .node-text.small { font-size: 13px; font-weight: 500; }
-    .node-text.tiny { font-size: 12.5px; font-weight: 500; }
+    .node-text { fill: #e4e4e7; font-family: 'Inter', sans-serif; pointer-events: none; }
+    .node-text.large { font-size: 16px; font-weight: 700; text-anchor: middle; }
+    .node-text.medium { font-size: 13.5px; font-weight: 600; text-anchor: middle; }
+    .node-text.small { font-size: 12.5px; font-weight: 500; text-anchor: middle; }
+    .node-text.tiny { font-size: 12px; font-weight: 500; text-anchor: middle; }
+    .node path, .node line, .node circle:not([class]) { pointer-events: none; transition: all 0.3s ease; }
 
     /* Node colors by category */
     .node-ai rect { fill: #2a2a4a; stroke: #6366f1; }
@@ -363,6 +534,15 @@
     .conn.dimmed { opacity: 0.08; }
     .node.dimmed rect { opacity: 0.2; }
     .node.dimmed .node-text { opacity: 0.2; }
+    .node.dimmed path, .node.dimmed line, .node.dimmed circle { opacity: 0.1; }
+
+    /* Example nodes */
+    .conn.example { stroke-width: 1.5; stroke: #5e5e7a; stroke-dasharray: 4 3; }
+    .node-example rect { opacity: 0.6; stroke-width: 1.2; }
+    .example-text { font-size: 11px; font-weight: 400; fill: var(--text-muted); text-anchor: middle; }
+    .node-example:hover rect { opacity: 1; }
+    .node-example:hover .example-text { fill: #fff; }
+    .node.dimmed.node-example rect { opacity: 0.08; }
 
     /* Subset badges */
     .badge-text { fill: var(--text-muted); font-size: 9px; opacity: 0.5; font-family: 'Inter', sans-serif; }
@@ -405,6 +585,7 @@
     .node-ethics-sub, .conn[data-to="bias"], .conn[data-to="privacy"], .conn[data-to="safety"], .conn[data-to="accountability"] { animation-delay: 0.6s; }
     .conn.cross { animation-delay: 1.3s; }
     .conn.progression { animation-delay: 0.3s; }
+    .node-example, .conn.example { animation-delay: 0.8s; }
   </style>
   <script>
   (function() {
@@ -460,7 +641,7 @@
       n.addEventListener('mouseleave', resetHighlight);
       n.addEventListener('click', function() {
         var href = n.getAttribute('data-href');
-        if (href) window.location.href = href;
+        if (href) window.open(href, '_blank');
       });
     });
 
